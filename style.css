@@ -90,6 +90,7 @@ footer{
         padding: 3vw;
         width: 50vw;
         margin-right: 20vw;
+        margin-top: 5vw;
         background-color: var(--negro);
         color: var(--blanco);
         position: absolute;
@@ -272,6 +273,7 @@ b{
         color: var(--negro);
         font-family: var(--nums);
     }
+   
 
     .catPor {
         color: var(--gris);
@@ -333,7 +335,7 @@ b{
     padding: 5vw 0;
     color: white;
     font-size: 20px;
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 .modal button {
@@ -480,6 +482,7 @@ b{
         padding: 2vw;
         width: 30vw;
         margin-right: 10vw;
+        margin-top: 5vw;
         background-color: var(--negro);
         color: var(--blanco);
         position: absolute;
@@ -529,8 +532,8 @@ b{
         border-radius: 30vw;
         margin-top: 5vw;
         flex-direction: row;
-        
     }
+  
     .contc-claro{
         background-color: #584c2a ;
         flex-direction: row;
@@ -552,6 +555,7 @@ b{
         border-radius: 100vw;
         
     }
+     
     .circ-claro{
         background-color: var(--amarillo);
         
@@ -663,7 +667,7 @@ b{
         color: var(--negro);
         font-family: var(--nums);
     }
-
+ 
     .catPor {
         color: var(--gris);
         font-family: var(--texto);
@@ -721,10 +725,10 @@ b{
     justify-content: center;
     align-items: center;
     gap: 2vw;
-    padding: 5vw 0;
+    padding: 2vw 0;
     color: white;
     font-size: 20px;
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 .modal button {
@@ -803,10 +807,8 @@ b{
 
 
 
-
-
 /*PC*/
-@media screen and (min-width:1501px) and (max-width:2500px) {
+@media screen and (min-width:1401px) and (max-width:2500px) {
     /*Header*/
     header {
       display: flex;
@@ -886,6 +888,9 @@ b{
       font-size: 2vw;
       font-family: var(--texto);
   }
+  .close:hover{
+    cursor: pointer;
+  }
 
   .nav-cont {
       display: flex;
@@ -926,6 +931,9 @@ b{
       margin-top: 2vw;
       flex-direction: row;
       
+  }
+  .contc:hover{
+    cursor: pointer;
   }
   .contc-claro{
       background-color: #584c2a ;
@@ -1056,8 +1064,13 @@ b{
       font-size: 3vw;
       color: var(--negro);
       font-family: var(--nums);
+      transition: all 0.3s;
+       
   }
-
+  .cantidad:hover{
+    cursor: pointer;
+     border: 6px solid #2071aa;
+  }
   .catPor {
       color: var(--gris);
       font-family: var(--texto);
@@ -1071,7 +1084,7 @@ b{
       width: 5vw;
       height: 5vw;
       border-radius: 50%;
-      border: 3px solid var(--azul);
+      border: 6px solid var(--azul);
       align-items: center;
       justify-content: center;
       color: var(--negro);
@@ -1080,8 +1093,9 @@ b{
   }
 
   .agregar:hover {
-      border: 3px solid var(--azul);
-      color: var(--verde);
+      border: 6px solid #2071aa;
+      color: var(--verde) !important;
+      cursor: pointer;
   }
 
   
@@ -1110,20 +1124,20 @@ b{
 }
 .modal {
     background: var(--blanco);
-    width: 45vw;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2vw;
-    padding: 3vw 0;
+    gap: 1vw;
+    padding: 1vw 0;
     color: white;
     font-size: 20px;
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 .modal button {
-    width: 10vw;
+    width: 8vw;
  background-color: var(--azul);
  color: var(--blanco);
  padding: 1vw;
@@ -1133,8 +1147,9 @@ b{
     text-align: center;
     font-family: var(--texto);
 }
+
 .btnborrar{
-    width: 10vw;
+    width: 8vw;
     background-color: var(--rojo) !important;
     color: var(--blanco);
     padding: 1vw;
@@ -1144,6 +1159,7 @@ b{
        text-align: center;
        font-family: var(--texto);
 }
+
 .modal-tit{
     width: 25vw;
     text-align: center;
@@ -1151,7 +1167,7 @@ b{
     font-family: var(--texto);
     font-weight: lighter;
     font-size: 1vw;
-    border: 3px solid var(--azul);
+    border: 6px solid var(--azul);
     border-radius: 6px;
     padding: 0.5vw 0.5vw;
 }
@@ -1169,7 +1185,7 @@ b{
 }
 .cajmod{
     width: 6vw;
-    border: 3px solid var(--azul);
+    border: 6px solid var(--azul);
     border-radius: 6px;
 }
 .inpch{
@@ -1200,3 +1216,11 @@ b{
 
 
 
+.modal button:hover{
+cursor: pointer;
+background-color: #2071aa;
+}
+
+.btnborrar:hover{
+background-color:#aa2020 !important ;
+}
