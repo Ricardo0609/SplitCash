@@ -826,6 +826,9 @@ b{
       height: 5vw;
       width: 5vw;
   }
+  .opmenu:hover{
+    cursor: pointer;
+  }
 .conttit{
   width: 100%;
   text-align: center;
@@ -836,7 +839,7 @@ b{
   font-family: var(--texto);
   color: var(--gris);
   font-weight: lighter;
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
   /*nav*/
   nav {
@@ -908,6 +911,7 @@ b{
       text-align: center;
       color: var(--gris);
       text-decoration: none;
+      font-size: 1.5vw !important;
   }
   
   .lk{
@@ -924,12 +928,13 @@ b{
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 0.5vw;
-      width: 13vw;
-      height: 6vw;
+      gap: 0.2vw;
+      width: 10vw;
+      height: 4vw;
       border-radius: 30vw;
       margin-top: 2vw;
       flex-direction: row;
+     
       
   }
   .contc:hover{
@@ -938,11 +943,15 @@ b{
   .contc-claro{
       background-color: #584c2a ;
       flex-direction: row;
+     
+
       
   }
   .contc-obs{
       background-color: #294255 ;
       flex-direction: row-reverse;
+     
+    
       
   }
 
@@ -950,32 +959,38 @@ b{
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 4vw;
-      height: 4vw;
+      width: 3vw;
+      height: 3vw;
       border-radius: 100vw;
+     
+     
       
   }
   .circ-claro{
       background-color: var(--amarillo);
+     
       
   }
   .circ-obs{
       background-color: var(--azul);
+     
       
   }
   .mobs{
       background-color: var(--negro);
       
+      
   }
   .tmobs{
       color:var(--blanco) !important;
       fill: var(--blanco) !important;
+     
   }
   
 span{
   color: var(--blanco);
   font-family: var(--texto);
-  font-size: 2vw;
+  font-size: 1.5vw;
 
 }
   /*input de sueldo*/
@@ -1009,7 +1024,7 @@ b{
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 30vw;
+      width: 25vw;
       padding: 1vw;
       text-align: center;
       border-radius: 2vw;
@@ -1027,7 +1042,7 @@ b{
       color: var(--negro);
       font-family: var(--nums);
       font-weight: 400;
-      font-size: 6vw;
+      font-size: 3vw;
       background-color:transparent;
       border: none;
       outline: none;
@@ -1046,7 +1061,7 @@ b{
   }
 
   .apartado {
-      width: 30vw;
+      width: 20vw;
       padding: 1vw;
       display: flex;
       justify-content: center;
@@ -1057,11 +1072,11 @@ b{
 
   .cantidad {
       width: 100%;
-      padding: 2vw;
+      padding: 1vw;
       text-align: center;
       border-radius: 18px;
       border: 6px solid var(--azul);
-      font-size: 3vw;
+      font-size: 2.5vw;
       color: var(--negro);
       font-family: var(--nums);
       transition: all 0.3s;
@@ -1074,22 +1089,22 @@ b{
   .catPor {
       color: var(--gris);
       font-family: var(--texto);
-      font-size: 2vw;
+      font-size: 1.5vw;
       text-align: center;
   }
 
   /*Agregar apartados*/
   .agregar {
       display: flex;
-      width: 5vw;
-      height: 5vw;
+      width: 3.5vw;
+      height: 3.5vw;
       border-radius: 50%;
       border: 6px solid var(--azul);
       align-items: center;
       justify-content: center;
       color: var(--negro);
       font-family: var(--nums);
-      font-size: 3vw;
+      font-size: 2vw;
   }
 
   .agregar:hover {
