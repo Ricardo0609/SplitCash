@@ -1,37 +1,50 @@
-const CACHE_NAME = "splitcash-cache-v1";
+const CACHE_NAME = "presupuesto-cache-v2";
+
 const urlsToCache = [
-     // Asegúrate de que la ruta base esté en caché
-    "/index.html",
-    "/style.css",
-    "/js.js",
-    "/sw.js"
-    
+    "./",
+    "./index.html",
+    "./style.css",
+    "./js.js",
+    "https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap",
+    "https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.7.0/dist/tabler-icons.min.css"
 ];
 
-// Instalación del Service Worker
+// Instalación: cachear recursos
 self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             return Promise.all(
-                urlsToCache.map((url) => {
-                    console.log(`Intentando cachear: ${url}`);
-                    return cache.add(url).catch((err) => {
-                        console.error(`Error al intentar cachear ${url}:`, err);
-                    });
-                })
+                urlsToCache.map((url) =>
+                    cache.add(url).catch((err) => {
+                        console.warn(`No se pudo cachear: ${url}`, err);
+                    })
+                )
             );
         })
     );
+    self.skipWaiting();
 });
 
+// Activación: limpiar caches viejos
+self.addEventListener("activate", (event) => {
+    event.waitUntil(
+        caches.keys().then((keys) =>
+            Promise.all(
+                keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
+            )
+        )
+    );
+    self.clients.claim();
+});
 
-// Interceptar solicitudes y responder con caché
+// Fetch: responder con caché, fallback a red
 self.addEventListener("fetch", (event) => {
     event.respondWith(
-        caches.match(event.request).then((response) => {
-            return response || fetch(event.request);
-        }).catch(() => {
-            return caches.match("/index.html"); // Fallback si no hay conexión
+        caches.match(event.request).then((cached) => {
+            return cached || fetch(event.request).catch(() => {
+                // Si no hay red y no está en caché, devolver index como fallback
+                return caches.match("./index.html");
+            });
         })
     );
 });
